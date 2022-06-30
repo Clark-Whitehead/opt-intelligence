@@ -2,5 +2,5 @@
 
 ## 1. ipython notebook
 ## &nbsp;&nbsp;a) Click on notebook to view
-## &nbsp;b) Can run notebook on colab
-## &nbsp;c) Run on local computer using jupyter-notebook
+## &nbsp;&nbsp;b) Can run notebook on colab
+## &nbsp;&nbsp;c) Run on local computer using jupyter-notebook
