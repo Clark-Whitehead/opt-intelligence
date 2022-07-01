@@ -4,7 +4,10 @@ import java.util.*;
 class Assign_Offers {
     public static void main(String[] args) {
         
+        //Path to input file
         String path = "./profiles.csv";
+
+        //Read input file into array
         String line = "";
         List<Object[]> values = new ArrayList<>();
 
@@ -14,27 +17,31 @@ class Assign_Offers {
                 values.add(line.split(","));
             }
 
+            //Close bufferedreader
+            br.close();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
-
-        test(values);
+        //Run local defined logic method
+        assign_offers(values);
 
     }
 
-    public static void test(List<Object[]> values) {
+    //Method for assigning offers and outputting to csv file
+    public static void assign_offers(List<Object[]> values) {
         
         try {
 
+            //Prep files for wrtting output to csv
             File file = new File("./resultsJava.csv");
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
 
-
+            //Loop through profiles file and assign offers to array
             for (int i=0; i<values.size(); i++){
 
                 List<String> individual_array = new ArrayList<String>();
@@ -65,7 +72,6 @@ class Assign_Offers {
                     }
 
                     if(age >= 36 && age <= 45) {
-                        individual_array.add("J");
                         individual_array.add("D");
                     }
 
@@ -101,19 +107,19 @@ class Assign_Offers {
                 }
 
 
-                // System.out.println(individual_array.get(j));
+                //Write current array to line in csv
                 for(int j=0; j<individual_array.size(); j++) {
                     bw.write(individual_array.get(j) + ",");
                 }
 
-                // bw.write(combined_array[i].get(combined_array[i].size()-1));
+                //Write new line in prep for next current array
                 bw.newLine();
-                // System.out.println(individual_array.get(j));
+                
                 
 
             }
 
-
+            //Close the files
             bw.close();
             fw.close();
 
