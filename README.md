@@ -2,7 +2,7 @@
 
 ## To run
 
-## 1. <span style="color: green">Java</span>
+## 1. Java
 #### &nbsp;&nbsp;a) Download Assign_Offers.class
 #### &nbsp;&nbsp;b) In terminal type: java Assign_Offers.class
 
